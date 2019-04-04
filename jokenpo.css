@@ -1,0 +1,24 @@
+img {
+    margin-right: 20px;
+    border-radius: 70px;
+}
+div {
+    margin-top: 30px;
+}
+
+img.mao {
+    border: 0.5px solid black;
+}
+div#humano > img.mao { /* todas as imgs com a class mao que está dentro de div */
+
+    box-shadow: none;
+    transition: boxshadow 1s ease;
+}
+div#humano > img.mao:hover  { /* todas as imgs com a class mao que está dentro de div e estao com o mouse em cima*/
+    box-shadow: 0 0 20px palevioletred;
+    transition: boxshadow 1s ease;
+}
+
+div#humano > img.mao.selecionada {
+    background-color:rgb(218, 181, 190);
+}
