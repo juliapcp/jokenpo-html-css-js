@@ -65,31 +65,43 @@ const jokenpo = {
     }
 };
 
-const maos = {
-    pedra: 'pedra',
-    papel: 'papel',
-    tesoura: 'tesoura',
-    lagarto: 'lagarto',
-    spock: 'spock'
-};
+// const maos = {
+//     pedra: 'pedra',
+//     papel: 'papel',
+//     tesoura: 'tesoura',
+//     lagarto: 'lagarto',
+//     spock: 'spock'
+// };
 
-console.log(jokenpo);
-console.log(maos);
-console.log(jokenpo.maos.lagarto.vence.papel); // come
+// console.log(jokenpo);
+// console.log(maos);
+// console.log(jokenpo.maos.lagarto.vence.papel); // come
 
 
-const mao1 = 'spock';
-const mao2 = 'papel';
+// const mao1 = 'spock';
+// const mao2 = 'papel';
 
-console.log(jokenpo['maos'][mao1]['vence'][mao2]);
-// se retornar diferente de undefined a mao 1 vence da mao 2
-console.log(jokenpo['maos'][mao2]['vence'][mao1]);
-// se retornar diferente de undefined a mao 2 vence da mao 1
+// console.log(jokenpo['maos'][mao1]['vence'][mao2]);
+// // se retornar diferente de undefined a mao 1 vence da mao 2
+// console.log(jokenpo['maos'][mao2]['vence'][mao1]);
+// // se retornar diferente de undefined a mao 2 vence da mao 1
 
-for (const m of Object.keys(jokenpo.maos)) {
-    // Object.keys cria um vetor com as chaves de determinado obj
-    // console.log(m);
-    for (const v of Object.keys(jokenpo.maos[m].vence)) {
-        console.log(m, jokenpo.maos[m].vence[v], v);
+// for (const m of Object.keys(jokenpo.maos)) {
+//     // Object.keys cria um vetor com as chaves de determinado obj
+//     // console.log(m);
+//     for (const v of Object.keys(jokenpo.maos[m].vence)) {
+//         console.log(m, jokenpo.maos[m].vence[v], v);
+//     }
+// }
+
+const divHumano = document.querySelector('div#humano');
+const maos = document.querySelectorAll('div#humano img.mao');
+divHumano.addEventListener('click', function(e) {
+    const elemento = e.target;
+    if (elemento.classList.contains('mao')) {
+        for (const mao of maos) {
+            if (mao !== elemento) mao.classList.remove('selecionada');
+        }
+        elemento.classList.toggle('selecionada');
     }
-}
+});

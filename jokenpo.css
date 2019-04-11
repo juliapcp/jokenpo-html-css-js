@@ -22,3 +22,6 @@ div#humano > img.mao:hover  { /* todas as imgs com a class mao que está dentro 
 div#humano > img.mao.selecionada {
     background-color:rgb(218, 181, 190);
 }
+button#confirm {
+    background-color: palevioletred;
+}
